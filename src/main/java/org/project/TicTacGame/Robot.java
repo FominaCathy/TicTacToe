@@ -206,7 +206,7 @@ public class Robot {
      * @return координаты позиции, в которую нужно поставить фишку чтобы игрок не выиграл
      */
     private int[] checkDiagonalReversed() {
-        int shiftX = 0;
+        int shiftX;
         int countDot = 0;
         int currX = -1;
         int currY = -1;

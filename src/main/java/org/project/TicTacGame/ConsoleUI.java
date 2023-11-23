@@ -11,9 +11,10 @@ public class ConsoleUI {
     public static void game() {
         //TODO доделать класс
         boolean stop = false;
-        TicTacGame game = new TicTacGame(5, 3);
+        TicTacGame game = new TicTacGame(5, 4);
         Robot robot = new Robot(game);
-
+        int countStep = 0;
+        int maxStep = TicTacGame.getSizeField()*TicTacGame.getSizeField();
         while (!stop) {
             game.startGame();
             boolean finish = false;
@@ -21,22 +22,29 @@ public class ConsoleUI {
 
             game.printField();
             //TODO есть какая-то проблема. пока не могу поймать
-            while (!finish) {
+            while ((!finish)&&(countStep < maxStep)) {
                 stepGamer();
+                countStep++;
+
                 if (game.checkWin(TicTacGame.getDotGamer())) {
                     System.out.println("Ура! вы победили");
                     finish = true;
-                } else {
+                } else if (countStep < maxStep){
                     stepRobot(robot);
-
+                    countStep++;
                     if (game.checkWin(TicTacGame.getDotRobot())) {
                         System.out.println("Победил робот");
                         finish = true;
                     }
                 }
+                if (countStep == maxStep){
+                    System.out.println("Ничья. Игра окончена");
+                    finish = true;
+                }
                 game.printField();
             }
             if (!nextGame()) {
+                countStep = 0;
                 stop = true;
             }
         }
