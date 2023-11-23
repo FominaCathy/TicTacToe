@@ -213,14 +213,16 @@ public class Robot {
 
         for (int j = 0; j <= sizeField - winCount; j++) {
             shiftX = 0;
+            //System.out.println("shift = " + shiftX);
             while (shiftX <= sizeField - winCount - j) {
                 for (int i = 0; i < winCount; i++) {
-                    if (TicTacGame.getField()[shiftX + i + j][sizeField - 1 - i] == TicTacGame.getDotGamer()) {
+                    if (TicTacGame.getField()[shiftX + i + j][sizeField - 1 - i- shiftX] == TicTacGame.getDotGamer()) {
                         countDot++;
-                    } else if (TicTacGame.getField()[shiftX + i + j][sizeField - 1 - i] == empty) {
+                    } else if (TicTacGame.getField()[shiftX + i + j][sizeField - 1 - i - shiftX] == empty) {
                         currX = shiftX + i + j;
-                        currY = sizeField - 1 - i;
+                        currY = sizeField - 1 - i - shiftX;
                     }
+                    //System.out.println((shiftX + i + j+ 1) + " - " + (sizeField - 1 - i - shiftX + 1));
                 }
                 if (countDot == winCount - 1) {
                     return new int[]{currX, currY};
