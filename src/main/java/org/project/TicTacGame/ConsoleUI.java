@@ -6,12 +6,14 @@ public class ConsoleUI {
     static Scanner scanner = new Scanner(System.in);
 
     /**
-     * игра
+     * игра крестики - нолики
+     * @param sizeField - размер игрового поля
+     * @param winCount - число фишек для победы
      */
-    public static void game() {
+    public static void game(int sizeField, int winCount) {
         //TODO доделать класс
         boolean stop = false;
-        TicTacGame game = new TicTacGame(5, 4);
+        TicTacGame game = new TicTacGame(sizeField, winCount);
         Robot robot = new Robot(game);
         int countStep = 0;
         int maxStep = TicTacGame.getSizeField()*TicTacGame.getSizeField();
