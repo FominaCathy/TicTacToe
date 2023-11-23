@@ -20,7 +20,7 @@ public class TicTacGame {
         this.winCount = Math.min(Math.max(winCount, 3), Math.max(sizeField, 3));
 
 
-        field = new char[sizeField][sizeField];
+        field = new char[this.sizeField][this.sizeField];
 
     }
 
