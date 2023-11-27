@@ -1,4 +1,4 @@
-package org.project.TicTacGame;
+package org.project.TicTacGame.Game;
 
 /**
  * игра крестики-нолики. минимальный размер поля = 3 минимальное кол-во фишек для победы = 3

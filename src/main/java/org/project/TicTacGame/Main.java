@@ -1,6 +1,6 @@
-package org.project;
+package org.project.TicTacGame;
 
-import org.project.TicTacGame.ConsoleUI;
+import org.project.TicTacGame.Game.ConsoleUI;
 
 public class Main {
 
